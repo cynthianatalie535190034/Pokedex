@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'detailPokemon_Page.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   runApp(MyApp());
