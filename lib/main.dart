@@ -129,29 +129,33 @@ class _PokemonListState extends State<PokemonList> {
                                     [index]['name']);
                           },
                           child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.lightBlue,
-                                border:
-                                    Border.all(width: 5.0, color: Colors.blue),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(50.0)),
+                            decoration: BoxDecoration(
+                              color: Colors.lightBlue,
+                              border:
+                                  Border.all(width: 5.0, color: Colors.blue),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50.0)),
+                            ),
+                            margin: EdgeInsets.all(4),
+                            padding: EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Row(
+                                children: [
+                                  Image.network(
+                                    urlBuatFoto(index + 1),
+                                    width: 50,
+                                    height: 50,
+                                  ),
+                                  Text(
+                                    widget.pokedexResult['results'][index]
+                                        ['name'],
+                                    style: TextStyle(
+                                        fontSize: 28, color: Colors.white),
+                                  ),
+                                ],
                               ),
-                              margin: EdgeInsets.all(4),
-                              padding: EdgeInsets.all(8.0),
-                              child: Center(
-                                  child: Text(
-                                widget.pokedexResult['results'][index]['name'],
-                                style: TextStyle(
-                                    fontSize: 28, color: Colors.white),
-                              ))
-                              //     Image.network(
-
-                              //   urlBuatFoto(index),
-                              //   width: 150,
-                              //   height: 150,
-
-                              // )
-                              ),
+                            ),
+                          ),
                         );
                       },
                       itemCount: widget.pokedexResult["results"].length,
@@ -171,15 +175,7 @@ class _PokemonListState extends State<PokemonList> {
                                   child: Text(
                             x[index],
                             style: TextStyle(fontSize: 28),
-                          ))
-                              //     Image.network(
-
-                              //   urlBuatFoto(index),
-                              //   width: 150,
-                              //   height: 150,
-
-                              // )
-                              ),
+                          ))),
                         );
                       },
                       itemCount: x.length,
